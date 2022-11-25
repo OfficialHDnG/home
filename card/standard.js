@@ -75,439 +75,6 @@ game.import('card',function(lib,game,ui,get,ai,_status){
 			},
 
 
-			novab:{
-				type:'basic',
-				content:function(){
-					'step 0'
-			var x=(player.hp/7700+0.01);
-			//target.damage(777+x);	
-			target.damage(x,'thunder');
-		
-			game.broadcastAll('createDialog',event.videoId, 'Stars are Born!');	
-			game.delay(0.5);	
-			'step 1'	
-			game.broadcastAll('createDialog',event.videoId, 'Stars are Born!');	
-			game.delay(0.5);			
-			},			
-			},
-			
-
-			
-
-		
-
-			rultc:{
-				type:'basic',
-				cardnature:'thunder',
-				content:function(){
-				var a=player.countCards('h',{number:'5'});
-				var b=player.countCards('h',{number:'6'});	
-				var c=player.countCards('h',{number:'1'});	
-				var d=player.countCards('h',{number:'2'});	
-			//	game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'wind'+d+'');	
-		game.delay(2);
-			var x=1000*(a*b);
-			var y=2777+1750*(a+b-c-d);
-				var z=(x+y+0.01);
-				target.damage(z);			
-			},			
-			},
-
-
-			erultc:{
-				type:'basic',
-				cardnature:'thunder',
-				content:function(){
-				var a=player.countCards('h',{number:'5'});
-				var b=player.countCards('h',{number:'6'});	
-				
-			//	game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'wind'+d+'');	
-		game.delay(2);
-			var x=1000*(a*b);
-			var y=3777+1750*(a+b);
-				var z=(x+y+0.01);
-				target.damage(z);			
-			},			
-			},
-
-
-
-			uhealon:{
-				type:'basic',
-				
-				content:function(){
-				
-				target.damage(1111);			
-			},			
-			},
-
-
-
-			rultch:{
-				type:'basic',
-				cardnature:'thunder',
-				content:function(){
-				var a=player.countCards('h',{number:'5'});
-				var b=player.countCards('h',{number:'6'});	
-				var c=player.countCards('h',{number:'1'});	
-				var d=player.countCards('h',{number:'2'});	
-			//	game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'wind'+d+'');	
-		game.delay(2);
-			var x=1000*(a*b);
-			var y=3777+2500*(a+b-c-d);
-				var z=(x+y+0.01);
-				target.damage(z,'thunder');			
-			},			
-			},
-
-
-			erultch:{
-				type:'basic',
-				cardnature:'thunder',
-				content:function(){
-				var a=player.countCards('h',{number:'5'});
-				var b=player.countCards('h',{number:'6'});	
-			
-			//	game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'wind'+d+'');	
-		game.delay(2);
-			var x=1000*(a*b);
-			var y=11777+2500*(a+b);
-				var z=(x+y+0.01);
-				target.damage(z,'thunder');			
-			},			
-			},
-
-
-
-			xultc:{
-				type:'basic',
-				content:function(target){
-				var a=player.countCards('h',{number:'1'});
-				var b=player.countCards('h',{number:'2'});	
-				var c=player.countCards('h',{number:'5'});	
-				var d=player.countCards('h',{number:'6'});	
-				//game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'wind'+d+'');	
-		//game.delay(2);
-			var x=1000*(a*b);
-			var y=2300+2500*(a+b-c-d);
-		
-				var z=(x+y+0.01)/12;
-				target.damage(z);			
-			},			
-			},
-
-
-
-
-
-			exultc:{
-				type:'basic',
-				content:function(target){
-				var a=player.countCards('h',{number:'1'});
-				var b=player.countCards('h',{number:'2'});	
-		
-				//game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'wind'+d+'');	
-		//game.delay(2);
-			var x=1000*(a*b);
-			var y=3300+2500*(a+b);
-		
-				var z=(x+y+0.01)/12;
-				target.damage(z);			
-			},			
-			},
-
-			xultch:{
-				type:'basic',
-				content:function(target){
-			
-			var e=(target.hp/5000+0.01);
-			
-				target.damage(e);			
-			},			
-			},
-
-			exultch:{
-				type:'basic',
-				content:function(target){
-			
-			var e=(target.hp/1000+0.01);
-			
-				target.damage(e);			
-			},			
-			},
-
-
-
-			ault:{
-				
-				enable:true,
-							content:function(){
-				var a=player.countCards('h',{number:'7'});
-				var b=player.countCards('h',{number:'1'});	
-				var c=player.countCards('h',{number:'2'});	
-				var d=player.countCards('h',{number:'3'});	
-				var e=player.countCards('h',{number:'4'});	
-				var f=player.countCards('h',{number:'5'});	
-				var g=player.countCards('h',{number:'6'});	
-				var h=player.storage.aedqi;
-				var i=player.storage.jud;
-
-					if(target.hasSkill('enemy')){
-						var x=Math.floor((7000.01+2500*(a)+0.00037*i+370*(b+c+d+e+f+g+h))/10);	
-						target.damage(x);
-					}
-					else {	
-						var t=Math.floor((777+2500*(a)+0.00037*i+370*(b+c+d+e+f+g+h))*12);	
-					
-					target.recover(t);
-					} 
-									
-				},
-				},
-
-
-
-
-				eault:{
-				
-					enable:true,
-								content:function(){
-					var a=player.countCards('h',{number:'7'});
-					var b=player.countCards('h',{number:'1'});	
-					var c=player.countCards('h',{number:'2'});	
-					var d=player.countCards('h',{number:'3'});	
-					var e=player.countCards('h',{number:'4'});	
-					var f=player.countCards('h',{number:'5'});	
-					var g=player.countCards('h',{number:'6'});	
-					var h=player.storage.aedqi;
-					var i=player.storage.jud;
-	
-						if(target.hasSkill('enemy')){
-							var x=Math.floor((7777.01+2500*(a)+0.00037*i+370*(b+c+d+e+f+g+h))/10);	
-							target.damage(x);
-						}
-						else {	
-							var t=Math.floor((777+2500*(a)+0.00037*i+370*(b+c+d+e+f+g+h))*12);	
-						
-						target.recover(t);
-						} 
-										
-					},
-					},
-
-
-
-			gultc:{
-				type:'basic',
-				enable:true,			
-				filterTarget:function(card,player,target){
-					return target!=player;
-				},
-				content:function(target,player){
-				var a=player.countCards('h',{number:'3'});
-				var b=player.countCards('h',{number:'4'});	
-				var c=player.countCards('h',{number:'7'});	
-				var d=player.countCards('h',{number:'7'});	
-			var e=(0.07*target.storage.jud/97);
-				//game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'damage'+e+'');	
-		game.delay(2);
-			var x=1000*(a*b);
-			var y=7999+2500*(a+b-c-d);
-				var z=(x+y+e);
-				target.node.jiu=ui.create.div('.playerea',target.node.avatar);
-					target.node.jiu2=ui.create.div('.playerea',target.node.avatar2);
-					game.delay(2);
-				target.damage(z+0.01);	
-				var cards=player.getCards('h');
-						player.discard(cards);
-				
-
-			},			
-			},
-
-
-
-
-			mgultc:{
-				type:'basic',
-				enable:true,			
-				filterTarget:function(card,player,target){
-					return target!=player;
-				},
-				content:function(target,player){
-				var a=player.countCards('h',{number:'3'});
-				var b=player.countCards('h',{number:'4'});	
-				
-			var e=(0.1*target.storage.jud/97);
-				//game.broadcastAll('createDialog',event.videoId, 'b'+a+'es'+b+'ocean'+c+'damage'+e+'');	
-		game.delay(2);
-			var x=1000*(a*b);
-			var y=9999+2500*(a+b);
-				var z=(x+y+e);
-				target.node.jiu=ui.create.div('.playermea',target.node.avatar);
-					target.node.jiu2=ui.create.div('.playermea',target.node.avatar2);
-					game.delay(2);
-				target.damage(z+0.01);	
-				var cards=player.getCards('h');
-						player.discard(cards);
-				
-
-			},			
-			},
-
-
-
-clearu:{
-	enable:function(event,player){
-		//return !player.hasSkill('jiu');
-		return true;
-	},
-	filterTarget:function(card,player,target){
-		return target.hp>=0;
-	},
-	content:function(target){
-		if(target.hasSkill('xtsunn')){
-			var x=target.storage.xtsunn;
-			target.storage.xtsunn-=x;
-			target.update();
-		}
-
-		if(target.hasSkill('edenn')){
-			var x=target.storage.edenn;
-			target.storage.edenn-=x;
-			target.update();
-
-		}
-
-	},
-},
-
-
-			jiu:{
-				audio:true,
-				fullskin:true,
-				type:"basic",
-				toself:true,
-				enable:function(event,player){
-					//return !player.hasSkill('jiu');
-					return true;
-				},
-				lianheng:true,
-				logv:false,
-				savable:function(card,player,dying){
-					return dying==player||player.hasSkillTag('jiuOther',null,dying,true);
-				},
-				usable:1,
-				selectTarget:-1,
-				modTarget:true,
-				filterTarget:function(card,player,target){
-					return target==player;
-				},
-				content:function(){
-					if(typeof event.baseDamage!='number') event.baseDamage=1;
-					if(target.isDying()||event.getParent(2).type=='dying'){
-						target.recover(event.baseDamage);
-						if(_status.currentPhase==target){
-							target.getStat().card.jiu--;
-						}
-					}
-					else{
-						game.addVideo('jiuNode',target,true);
-						if(cards&&cards.length){
-							card=cards[0];
-						}
-						if(!target.storage.jiu) target.storage.jiu=0;
-						target.storage.jiu+=event.baseDamage;
-						game.broadcastAll(function(target,card,gain2){
-							target.addSkill('jiu');
-							if(!target.node.jiu&&lib.config.jiu_effect){
-								target.node.jiu=ui.create.div('.playerjiu',target.node.avatar);
-								target.node.jiu2=ui.create.div('.playerjiu',target.node.avatar2);
-							}
-							if(gain2&&card.clone&&(card.clone.parentNode==target.parentNode||card.clone.parentNode==ui.arena)){
-								card.clone.moveDelete(target);
-							}
-						},target,card,target==targets[0]&&cards.length==1);
-						if(target==targets[0]&&cards.length==1){
-							if(card.clone&&(card.clone.parentNode==target.parentNode||card.clone.parentNode==ui.arena)){
-								game.addVideo('gain2',target,get.cardsInfo([card]));
-							}
-						}
-					}
-				},
-				ai:{
-					basic:{
-						useful:function(card,i){
-							if(_status.event.player.hp>1){
-								if(i==0) return 4;
-								return 1;
-							}
-							if(i==0) return 7.3;
-							return 3;
-						},
-						value:function(card,player,i){
-							if(player.hp>1){
-								if(i==0) return 5;
-								return 1;
-							}
-							if(i==0) return 7.3;
-							return 3;
-						},
-					},
-					order:function(){
-						return get.order({name:'sha'})+0.2;
-					},
-					result:{
-						target:function(player,target){
-							if(target&&target.isDying()) return 2;
-							if(target&&!target.isPhaseUsing()) return 0;
-							if(lib.config.mode=='stone'&&!player.isMin()){
-								if(player.getActCount()+1>=player.actcount) return 0;
-							}
-							var shas=player.getCards('h','sha');
-							if(shas.length>1&&(player.getCardUsable('sha')>1||player.countCards('h','zhuge'))){
-								return 0;
-							}
-							shas.sort(function(a,b){
-								return get.order(b)-get.order(a);
-							})
-							var card;
-							if(shas.length){
-								for(var i=0;i<shas.length;i++){
-									if(lib.filter.filterCard(shas[i],target)){
-										card=shas[i];break;
-									}
-								}
-							}
-							else if(player.hasSha()&&player.needsToDiscard()){
-								if(player.countCards('h','hufu')!=1){
-									card={name:'sha'};
-								}
-							}
-							if(card){
-								if(game.hasPlayer(function(current){
-									return (get.attitude(target,current)<0&&
-										target.canUse(card,current,true,true)&&
-										!current.hasSkillTag('filterDamage',null,{
-											player:player,
-											card:card,
-											jiu:true,
-										})&&
-										get.effect(current,card,target)>0);
-								})){
-									return 1;
-								}
-							}
-							return 0;
-						},
-					},
-					tag:{
-						save:1
-					}
-				}
-			},
-
-
 
 			shanene:{
 				fullskin:true,
@@ -559,7 +126,19 @@ clearu:{
 
 
 
+			xult:{
+				fullskin:true,
 		
+				enable:true,
+			
+				content:function(){
+					
+						target.damage(2381);
+					
+					
+				},
+				
+			},
 
 			rsha:{
 				fullskin:true,
@@ -578,7 +157,18 @@ clearu:{
 
 
 
-		
+			ault:{
+				fullskin:true,		
+				enable:true,
+							content:function(){
+					if(target.hasSkill('enemy')){
+						target.damage(900);
+					}
+					else {target.recover(7777);} 
+									
+				},
+				},
+
 
 
 			celeb:{
@@ -744,7 +334,7 @@ clearu:{
 						event._result={bool:true,result:'shaned'};
 					}
 					else{
-						var next=target.chooseToUse('Defend? Play 1 Ea: Haven LoreSong');
+						var next=target.chooseToUse('防御 - 启动一首遗芽：天堂之歌');
 						next.set('type','respondShan');
 						next.set('filterCard',function(card,player){
 							if(get.name(card)!='shan') return false;
@@ -1025,7 +615,7 @@ clearu:{
 						event._result={bool:true,result:'shaned'};
 					}
 					else{
-						var next=target.chooseToUse('Defend? Play 1 Ea: Haven LoreSong');
+						var next=target.chooseToUse('启动一首遗芽：天堂之歌');
 						next.set('type','respondShan');
 						next.set('filterCard',function(card,player){
 							if(get.name(card)!='shan') return false;
@@ -2424,7 +2014,53 @@ xelema:{
 						}
 					}
 				},
-			
+				ai:{
+					wuxie:function(target,card,player,viewer){
+						if(player==game.me&&get.attitude(viewer,player)>0){
+							return 0;
+						}
+					},
+					basic:{
+						order:5,
+						useful:1,
+						value:5.5
+					},
+					result:{
+						target:-1.5,
+						player:function(player,target,card){
+							if(player.hasSkillTag('directHit_ai',true,{
+								target:target,
+								card:card,
+							},true)){
+								return 0;
+							}
+							if(get.damageEffect(target,player,target)>0&&get.attitude(player,target)>0&&get.attitude(target,player)>0){
+								return 0;
+							}
+							var hs1=target.getCards('h','sha');
+							var hs2=player.getCards('h','sha');
+							if(hs1.length>hs2.length+1){
+								return -2;
+							}
+							var hsx=target.getCards('h');
+							if(hsx.length>2&&hs2.length==0&&hsx[0].number<6){
+								return -2;
+							}
+							if(hsx.length>3&&hs2.length==0){
+								return -2;
+							}
+							if(hs1.length>hs2.length&&(!hs2.length||hs1[0].number>hs2[0].number)){
+								return -2;
+							}
+							return -0.5;
+						}
+					},
+					tag:{
+						respond:2,
+						respondSha:2,
+						damage:1,
+					}
+				}
 			},
 			shunshou:{
 				audio:true,
@@ -3934,14 +3570,14 @@ xelema:{
 			},
 		},
 		translate:{
-			sha:'ΛShone:Strike',
+			sha:'Λ伤:奇袭',
 		
 			huosha:'火杀',
 			leisha:'雷杀',
 			icesha:'冰杀',
 			kamisha:'神杀',
 			cisha:'刺杀',
-			shan:' ΩEa:Haven',
+			shan:' Ω遗芽：天堂',
 			tao:'桃',
 			bagua:'八卦阵',
 			bagua_bg:'卦',
@@ -3982,16 +3618,16 @@ xelema:{
 			qilin_skill:'麒麟弓',
 			wugu:'五谷丰登',
 			taoyuan:'桃园结义',
-			nanman:'ξHealon:Calm',
-			wanjian:'ΨNyeve:Empire',
+			nanman:'ξ希任:安和',
+			wanjian:'Ψ涅芙:帝国',
 			wuzhong:'无中生有',
-			juedou:'SkyWar',
+			juedou:'天战',
 			wugu_bg:'谷',
 			taoyuan_bg:'园',
 			nanman_bg:'蛮',
 			wanjian_bg:'箭',
 			wuzhong_bg:'生',
-			ault:'Ult!',
+			ault:'一绝!',
 			juedou_bg:'斗',
 			shunshou:'顺手牵羊',
 			guohe:'过河拆桥',
@@ -4000,12 +3636,12 @@ xelema:{
 			wuxie:'无懈可击',
 			wuxie_bg:'懈',
 			lebu:'乐不思蜀',
-			roar:'VENGEANCE',
+			roar:'仇恨',
 			shandian:'闪电',
 			shandian_bg:'电',
 			hanbing:'寒冰剑',
 			renwang:'仁王盾',
-			ha:'Assault',
+			ha:'杀',
 			hanbing_bg:'冰',
 			renwang_bg:'盾',
 			hanbing_skill:'寒冰剑',
@@ -4128,6 +3764,8 @@ xelema:{
 			["heart",7,"shan"],
 
 
+
+
 			["spade",1,"nanman"],
 			["spade",2,"nanman"],
 			["spade",3,"nanman"],
@@ -4159,8 +3797,6 @@ xelema:{
 			["heart",5,"nanman"],
 			["heart",6,"nanman"],
 			["heart",7,"nanman"],
-
-		
 
 
 			["spade",1,"wanjian"],
@@ -4203,15 +3839,7 @@ xelema:{
 			["spade",5,"sha"],
 			["spade",6,"sha"],
 			["spade",7,"sha"],
-
-//["spade",1,"juedou"],
-	//		["spade",2,"juedou"],
-	//		["spade",3,"juedou"],
-	///		["spade",4,"juedou"],
-	//		["spade",5,"juedou"],
-	//		["spade",6,"juedou"],
-		//	["spade",7,"juedou"],
-	 
+		 
 			["club",1,"sha"],
 			["club",2,"sha"],
 			["club",3,"sha"],
