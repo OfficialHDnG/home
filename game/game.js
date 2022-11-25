@@ -38,27 +38,14 @@
 			//coding:'https://raw.githubusercontent.com/adeFuLoDgu/noname',
 			//github:'https://raw.githubusercontent.com/adeFuLoDgu/noname',
 		},
-		updateURL:'https://hidngem.miraheze.org/wiki/Main_Page',
-		mirrorURL:'https://hidngem.miraheze.org/wiki/Main_Page',
-		//hallURL:'123.56.240.30',
-		hallURL:'1',
+		updateURL:'https://raw.githubusercontent.com/adeFuLoDgu/noname',
+		mirrorURL:'https://raw.githubusercontent.com/adeFuLoDgu/noname',
+		hallURL:'123.56.240.30',
 		assetURL:'',
 		changeLog:[],
 		updates:[],
 		canvasUpdates:[],
 		video:[],
-		lvr:[],
-		lva:[],
-		lvg:[],
-		lvx:[],
-		coin:[],
-		expe:[],
-
-		//TEST
-		xtsu:[],
-	aede:[],
-	rvol:[],
-	gjud:[],
 		skilllist:[],
 		connectBanned:[],
 		characterIntro:{},
@@ -130,8 +117,8 @@
 				name:'Setting',
 				config:{
 					low_performance:{
-						name:'FixLag:Text',
-						init:false,
+						name:'LagFix',
+						init:true,
 						intro:'减少部分游戏特效，提高游戏速度',
 						onclick:function(bool){
 							game.saveConfig('low_performance',bool);
@@ -143,81 +130,17 @@
 							}
 						}
 					},
-
-					low_performancezoom:{
-						name:'FixLag:LoreSong',
-						init:true,
-						intro:'减少部分游戏特效，提高游戏速度',
-						onclick:function(bool){
-							game.saveConfig('lowsong',bool);
-							if(bool){
-								ui.window.classList.remove('lowsong');
-							}
-							else{
-								ui.window.classList.add('lowsong');
-							}
-						}
-					},
-
-
-
-					rpgstory:{
-						name:'RPG Story',
-						init:true,
-						//intro:'开启兼容模式可防止扩展使游戏卡死并提高对旧扩展的兼容性，但对游戏速度有一定影响，若无不稳定或不兼容的扩展建议关闭',
-						onclick:function(bool){
-							game.saveConfig('rpgstory',bool);
-							if(bool){
-								ui.window.classList.remove('rpgstory');
-							}
-							else{
-								ui.window.classList.add('rpgstory');
-							}
-						}
-					},
-
-					nosparkles:{
-						name:'Turn off Sparkles!',
-						init:true,
-						//intro:'开启兼容模式可防止扩展使游戏卡死并提高对旧扩展的兼容性，但对游戏速度有一定影响，若无不稳定或不兼容的扩展建议关闭',
-						onclick:function(bool){
-							game.saveConfig('nosparkles',bool);
-							if(bool){
-								ui.window.classList.remove('nosparkles');
-							}
-							else{
-								ui.window.classList.add('nosparkles');
-							}
-						}
-					},
-
-					ultt:{
-						name:'Secret Ult Progress',
-						init:false,
-						//intro:'开启兼容模式可防止扩展使游戏卡死并提高对旧扩展的兼容性，但对游戏速度有一定影响，若无不稳定或不兼容的扩展建议关闭',
-						onclick:function(bool){
-							game.saveConfig('ultt',bool);
-							if(bool){
-								ui.window.classList.remove('ultt');
-							}
-							else{
-								ui.window.classList.add('ultt');
-							}
-						}
-					},
-
-
 					compatiblemode:{
-						name:'Lv.57+ HP Bar',
+						name:'兼容模式',
 						init:false,
 						intro:'开启兼容模式可防止扩展使游戏卡死并提高对旧扩展的兼容性，但对游戏速度有一定影响，若无不稳定或不兼容的扩展建议关闭',
 						onclick:function(bool){
-							game.saveConfig('hpbar',bool);
+							game.saveConfig('compatiblemode',bool);
 							if(bool){
-								ui.window.classList.add('hpbar');
+								ui.window.classList.add('compatiblemode');
 							}
 							else{
-								ui.window.classList.remove('hpbar');
+								ui.window.classList.remove('compatiblemode');
 							}
 						}
 					},
@@ -464,9 +387,9 @@
 						intro:'在空白区域点击右键时的操作',
 						unfrequent:true,
 						item:{
-							pause:'Rest',
+							pause:'暂停',
 							shortcut:'工具',
-							config:'Script',
+							config:'设定',
 							auto:'托管',
 						},
 						onclick:function(item){
@@ -521,16 +444,16 @@
 						intro:'双击武将头像后显示其资料卡',
 					},
 					video:{
-						name:'GamePlay Vids',
+						name:'保存录像',
 						init:'50',
 						intro:'游戏结束后保存录像在最大条数，超过后将从最早的录像开始删除（已收藏的录像不计入条数）',
 						item:{
-							'0':'Dont save',
-							'5':'Past 5 Games',
-							'10':'Past 10 Games',
-							'20':'Past 20 Games',
-							'50':'Past 50 Games',
-							'10000':'Infinity',
+							'0':'关闭',
+							'5':'五局',
+							'10':'十局',
+							'20':'二十局',
+							'50':'五十局',
+							'10000':'无限',
 						},
 						unfrequent:true,
 					},
@@ -3559,7 +3482,7 @@ case 'gbig':zoom=1.6;break;
 						}
 					},
 					show_auto:{
-						name:'Show MV Button',
+						name:'显示托管按钮',
 						init:true,
 						unfrequent:true,
 						onclick:function(bool){
@@ -3573,7 +3496,7 @@ case 'gbig':zoom=1.6;break;
 						}
 					},
 					show_volumn:{
-						name:'Show Volume Control',
+						name:'显示音量按钮',
 						init:true,
 						unfrequent:true,
 						onclick:function(bool){
@@ -3601,7 +3524,7 @@ case 'gbig':zoom=1.6;break;
 						}
 					},
 					show_cardpile_number:{
-						name:'Show Round & LoreSong Number',
+						name:'显示剩余牌数',
 						init:false,
 						unfrequent:true,
 						onclick:function(bool){
@@ -3762,7 +3685,7 @@ case 'gbig':zoom=1.6;break;
 						name:'清除自定义背景音乐',
 						clear:true,
 						onclick:function(){
-							if(confirm('是否清除已的所有自定义背景音乐？（该操作不可撤销！）')){
+							if(confirm('是否清除已导入的所有自定义背景音乐？（该操作不可撤销！）')){
 								for(var i in lib.config.customBackgroundMusic){
 									lib.config.all.background_music.remove(i);
 									if(i.indexOf('cdv_')==0){
@@ -3807,7 +3730,7 @@ case 'gbig':zoom=1.6;break;
 				}
 			},
 			others:{
-				name:'Save!',
+				name:'其它',
 				config:{
 					// reset_database:{
 					// 	name:'重置游戏',
@@ -3835,8 +3758,7 @@ case 'gbig':zoom=1.6;break;
 					// },
 				
 					reset_hiddenpack:{
-						//name:'重置隐藏内容',
-						name:'  ',
+						name:'重置隐藏内容',
 						onclick:function(){
 							if(this.firstChild.innerHTML!='已重置'){
 								this.firstChild.innerHTML='已重置'
@@ -3859,8 +3781,7 @@ case 'gbig':zoom=1.6;break;
 						clear:true
 					},
 					reset_tutorial:{
-						//name:'重置新手向导',
-						name:'  ',
+						name:'重置新手向导',
 						onclick:function(){
 							if(this.firstChild.innerHTML!='已重置'){
 								this.firstChild.innerHTML='已重置'
@@ -3876,7 +3797,7 @@ case 'gbig':zoom=1.6;break;
 						clear:true
 					},
 					import_data:{
-						name:'Load Save File',
+						name:'导入游戏设置',
 						onclick:function(){
 							ui.import_data_button.classList.toggle('hidden');
 						},
@@ -3889,11 +3810,11 @@ case 'gbig':zoom=1.6;break;
 						clear:true,
 					},
 					export_data:{
-						name:'Save Game!',
+						name:'导出游戏设置',
 						onclick:function(){
 							var data;
 							var export_data=function(data){
-								game.export(lib.init.encode(JSON.stringify(data)),'5TORY.3VER.4FTER - Beta - '+(new Date()).toLocaleString());
+								game.export(lib.init.encode(JSON.stringify(data)),'无名杀 - 数据 - '+(new Date()).toLocaleString());
 							}
 							if(!lib.db){
 								data={};
@@ -5709,16 +5630,16 @@ case 'gbig':zoom=1.6;break;
 				}
 			},
 			connect:{
-				name:'Door 1',
+				name:'第一道门',
 				config:{
 					connect_nickname:{
-						name:'my name',
+						name:'名字',
 						input:true,
 						frequent:true,
 					},
 
 					connect_country:{
-						name:'country',
+						name:'代表国家',
 						input:true,
 						frequent:true,
 					},
@@ -5762,7 +5683,7 @@ case 'gbig':zoom=1.6;break;
 				}
 			},
 			boss:{
-				name:'GO!!',
+				name:'开玩!!',
 				config:{
 					free_choose:{
 						name:'自由选将',
@@ -5793,7 +5714,7 @@ case 'gbig':zoom=1.6;break;
 						frequent:true,
 					},
 					single_control:{
-						name:'Full Team Control',
+						name:'全队控制',
 						init:true,
 						frequent:true,
 						onclick:function(bool){
@@ -5989,7 +5910,7 @@ case 'gbig':zoom=1.6;break;
 						},
 					},
 					continue_game:{
-						name:'显示Play Again!',
+						name:'显示再玩一次!',
 						init:false,
 						onclick:function(bool){
 							game.saveConfig('continue_game',bool,this._link.config.mode);
@@ -6903,7 +6824,7 @@ case 'gbig':zoom=1.6;break;
 		saveVideo:function(){
 			if(_status.videoToSave){
 				game.export(lib.init.encode(JSON.stringify(_status.videoToSave)),
-				'HDnG LoreSong - MV Maker - '+_status.videoToSave.name[0]+' - '+_status.videoToSave.name[1]);
+				'谙灵光 - 自启录像 - '+_status.videoToSave.name[0]+' - '+_status.videoToSave.name[1]);
 			}
 		},
 		init:{
@@ -10400,9 +10321,9 @@ case 'gbig':zoom=1.6;break;
 			xiaotao_emotion:'小桃表情',
 			xiaojiu_emotion:'小酒表情',
 
-			pause:'Rest',
+			pause:'暂停',
 			config:'<span style="text-color:0,0,0,0">Script</span>',
-			auto:'MV',
+			auto:'启',
 
 			unknown:'未知',
 			unknown0:'一号位',
@@ -12236,7 +12157,7 @@ case 'gbig':zoom=1.6;break;
 				replaceHandcards:function(){
 					'step 0'
 					if(event.players.contains(game.me)){
-						game.me.chooseBool('Try 4 New LoreSongs?');
+						game.me.chooseBool(' ?');
 					}
 					else{
 						event.finish();
@@ -12255,7 +12176,7 @@ case 'gbig':zoom=1.6;break;
 				replaceHandcardsOL:function(){
 					'step 0'
 					var send=function(){
-						game.me.chooseBool('Try 4 New LoreSongs?');
+						game.me.chooseBool(' ?');
 						game.resume();
 					};
 					var sendback=function(result,player){
@@ -12280,7 +12201,7 @@ case 'gbig':zoom=1.6;break;
 						}
 						else if(event.players[i]==game.me){
 							event.withme=true;
-							game.me.chooseBool('Try 4 New LoreSongs?');
+							game.me.chooseBool(' ?');
 							game.me.wait(sendback);
 						}
 					}
@@ -12482,7 +12403,7 @@ case 'gbig':zoom=1.6;break;
 					_status.noclearcountdown=true;
 					if(event.type=='phase'){
 						if(event.isMine()){
-							event.endButton=ui.create.control('Fin','stayleft',function(){
+							event.endButton=ui.create.control('静','stayleft',function(){
 								if(_status.event.skill){
 									ui.click.cancel();
 								}
@@ -12559,7 +12480,7 @@ case 'gbig':zoom=1.6;break;
 									}
 								}
 								else{
-									//str='Play a LoreSong & Click a Target';
+									
 									str=' ';
 								}
 								if(event.openskilldialog){
@@ -12945,14 +12866,14 @@ case 'gbig':zoom=1.6;break;
 								var str;
 								if(typeof(event.prompt)=='string') str=event.prompt;
 								else{
-									str='Save your LoreSongs and return ';
+									str='选择记忆中的古谣 ';
 									if(range[0]==range[1]) str+=get.cnNumber(range[0]);
 									else if(range[1]==Infinity) str+=' at least '+get.cnNumber(range[0]);
 									else str+=get.cnNumber(range[0])+' to '+get.cnNumber(range[1]);
 									str+=' ';
 									if(event.position=='h'||event.position==undefined) str+=' ';
 									if(event.position=='e') str+=' Weapon ';
-									str+=' LoreSongs ';
+									str+=' 古谣 ';
 								}
 								event.dialog=ui.create.dialog(str);
 								if(event.prompt2){
@@ -13066,7 +12987,7 @@ case 'gbig':zoom=1.6;break;
 					});
 					if(event.list.length||!event.fixedResult||!event.fixedResult[player.playerid]){
 						if(!event.fixedResult||!event.fixedResult[player.playerid]) event.list.unshift(player);
-						player.chooseCardOL(event.list,'Choose Your LoreSong',true).set('type','compare').set('ai',event.ai).set('source',player).aiCard=function(target){
+						player.chooseCardOL(event.list,'选那一首古谣？',true).set('type','compare').set('ai',event.ai).set('source',player).aiCard=function(target){
 							var hs=target.getCards('h');
 							var event=_status.event;
 							event.player=target;
@@ -13215,13 +13136,13 @@ case 'gbig':zoom=1.6;break;
 						player.wait(sendback);
 						event.ol=true;
 						player.send(function(ai){
-							game.me.chooseCard('Choose Your MYSTERY LoreSong',true).set('type','compare').set('glow_result',true).ai=ai;
+							game.me.chooseCard('选择一首古谣',true).set('type','compare').set('glow_result',true).ai=ai;
 							game.resume();
 						},event.ai);
 					}
 					else{
 						event.localPlayer=true;
-						player.chooseCard('Choose Your MYSTERY LoreSong',true).set('type','compare').set('glow_result',true).ai=event.ai;
+						player.chooseCard('选择一首古谣',true).set('type','compare').set('glow_result',true).ai=event.ai;
 					}
 					if(event.fixedResult&&event.fixedResult[target.playerid]){
 						event.card2=event.fixedResult[target.playerid];
@@ -13231,7 +13152,7 @@ case 'gbig':zoom=1.6;break;
 						target.wait(sendback);
 						event.ol=true;
 						target.send(function(ai){
-							game.me.chooseCard('Choose Your MYSTERY LoreSong',true).set('type','compare').set('glow_result',true).ai=ai;
+							game.me.chooseCard('选择一首古谣 ',true).set('type','compare').set('glow_result',true).ai=ai;
 							game.resume();
 						},event.ai);
 					}
@@ -13248,7 +13169,7 @@ case 'gbig':zoom=1.6;break;
 						event.card1=result.cards[0];
 					}
 					if(event.localTarget){
-						target.chooseCard('Choose Your MYSTERY LoreSong',true).set('type','compare').set('glow_result',true).ai=event.ai;
+						target.chooseCard('选择一首古谣',true).set('type','compare').set('glow_result',true).ai=event.ai;
 					}
 					"step 3"
 					if(event.localTarget){
@@ -13499,7 +13420,7 @@ case 'gbig':zoom=1.6;break;
 							}
 							else if(!event.nogain){
 								player.gain(togain,'draw');
-								game.log(player,' gained 1 LoreSong');
+								game.log(player,' 获得一首古谣');
 							}
 						}
 					}
@@ -15515,10 +15436,10 @@ case 'gbig':zoom=1.6;break;
 					if(event.log!=false){
 						if(num>0){
 							if(event.bottom) game.log(player,'从牌堆底摸了'+get.cnNumber(num)+'张牌');
-							else game.log(player,' gained '+get.cnNumber(num)+'  LoreSongs');
+							else game.log(player,' gained '+get.cnNumber(num)+'  古谣');
 						}
 						if(event.drawDeck){
-							game.log(player,'从牌库中获得了'+get.cnNumber(event.drawDeck)+' LoreSongs');
+							game.log(player,'从牌库中获得了'+get.cnNumber(event.drawDeck)+' 古谣');
 						}
 					}
 					var cards;
@@ -15537,7 +15458,7 @@ case 'gbig':zoom=1.6;break;
 						if(event.visible){
 							var next=player.gain(cards,'gain2');
 							if(event.bottom) game.log(player,'从牌堆底摸了'+get.cnNumber(num)+'张牌（',cards,'）');
-							else game.log(player,' gained '+get.cnNumber(num)+' LoreSongs （',cards,'）');
+							else game.log(player,' gained '+get.cnNumber(num)+' 古谣 （',cards,'）');
 						}
 						else{
 							var next=player.gain(cards,'draw');
@@ -16163,7 +16084,7 @@ case 'gbig':zoom=1.6;break;
 					if(event.animate!==false){
 						player.$damage(source);
 						game.broadcastAll(function(nature,player){
-							if(lib.config.animation&&!lib.config.nosparkles){
+							if(lib.config.animation&&!lib.config.low_performance){
 								if(nature=='fire'){
 									player.$fire();
 								}
@@ -16172,16 +16093,7 @@ case 'gbig':zoom=1.6;break;
 								}
 							}
 						},event.nature,player);
-
-						//damaget
-						if(lib.config.low_performance){
-							//game.broadcastAll('createDialog',event.videoId,'-'+num+' HP!');
-							//game.delay(1);
-						}
-						if(!lib.config.low_performance){
-						player.$damagepop(-num,event.nature);}
-
-
+						player.$damagepop(-num,event.nature);
 					}
 					if(!event.notrigger){
 						if(num==0){
@@ -16199,7 +16111,7 @@ case 'gbig':zoom=1.6;break;
 						player.dying(event);
 					}
 					if(source&&lib.config.border_style=='auto'){
-						var dnum=source.hp;
+						var dnum=0;
 						for(var j=0;j<source.stat.length;j++){
 							if(source.stat[j].damage!=undefined) dnum+=source.stat[j].damage;
 						}
@@ -16213,15 +16125,15 @@ case 'gbig':zoom=1.6;break;
 						}
 						if(lib.config.autoborder_count=='damage'){
 							source.node.framebg.dataset.decoration='';
-							if(dnum>=2000000){
+							if(dnum>=10){
 								source.node.framebg.dataset.auto='gold';
 								if(dnum>=12) source.node.framebg.dataset.decoration='gold';
 							}
-							else if(dnum>=1000000&&dnum<=1999999){
+							else if(dnum>=6){
 								source.node.framebg.dataset.auto='silver';
 								if(dnum>=8) source.node.framebg.dataset.decoration='silver';
 							}
-							else if(dnum>=2&&dnum<=999999){
+							else if(dnum>=2){
 								source.node.framebg.dataset.auto='bronze';
 								if(dnum>=4) source.node.framebg.dataset.decoration='bronze';
 							}
@@ -16229,9 +16141,6 @@ case 'gbig':zoom=1.6;break;
 								source.classList.add('topcount');
 							}
 						}
-
-
-
 						else if(lib.config.autoborder_count=='mix'){
 							source.node.framebg.dataset.decoration='';
 							switch(source.node.framebg.dataset.auto){
@@ -16260,7 +16169,7 @@ case 'gbig':zoom=1.6;break;
 					if(num>0){
 						player.changeHp(num,false);
 						game.broadcastAll(function(player){
-							if(lib.config.animation&&!lib.config.nosparkles){
+							if(lib.config.animation&&!lib.config.low_performance){
 								player.$recover();
 							}
 						},player);
@@ -19197,7 +19106,7 @@ case 'gbig':zoom=1.6;break;
 							//next.dialog=next.prompt;
 						}
 						else{
-							var str='Protect Yourself? </br> Return a LoreSong of'
+							var str='防御 - </br> 启动一首古谣：'
 							if(filter){
 								if(filter.name){
 									str+=get.translation(filter.name);
@@ -23744,7 +23653,7 @@ case 'gbig':zoom=1.6;break;
 								}
 							}
 						}
-						if(node.style.transform&&!lib.config.lowsong&&node.style.transform!='none'&&node.style.transform.indexOf('translate')==-1){
+						if(node.style.transform&&!lib.config.low_performance&&node.style.transform!='none'&&node.style.transform.indexOf('translate')==-1){
 							//node.style.transform+=' translate('+dx+'px,'+dy+'px)';
 							'step 0'
 						
@@ -23756,7 +23665,7 @@ case 'gbig':zoom=1.6;break;
 
 						}
 
-						if(node.style.transform&&lib.config.lowsong&&node.style.transform!='none'&&node.style.transform.indexOf('translate')==-1){
+						if(node.style.transform&&lib.config.low_performance&&node.style.transform!='none'&&node.style.transform.indexOf('translate')==-1){
 							node.style.transform+=' translate('+dx+'px,'+dy+'px)';
 							'step 0'
 						
@@ -23768,7 +23677,7 @@ case 'gbig':zoom=1.6;break;
 						}
 						else{
 
-							if(lib.config.lowsong)  {
+							if(lib.config.low_performance)  {
 							//node.style.transform='translate('+dx+'px,'+dy+'px)';
 							'step 0'
 						
@@ -23778,7 +23687,7 @@ case 'gbig':zoom=1.6;break;
 							//node.style.transform='scale(0.5)';
 						}
 
-						if(!lib.config.lowsong)  {
+						if(!lib.config.low_performance)  {
 							node.style.transform='translate('+dx+'px,'+dy+'px)';
 							'step 0'
 						
@@ -24497,7 +24406,7 @@ case 'gbig':zoom=1.6;break;
 					}
 					else if(typeof card=='number'&&card>=0){
 						if(log!=false&&!_status.video){
-							game.log(player,' ,from ',this,' ,gained '+get.cnNumber(card)+' LoreSongs');
+							game.log(player,' ,from ',this,' ,gained '+get.cnNumber(card)+' 古谣');
 						}
 						if(this.$givemod){
 							this.$givemod(card,player);
@@ -24873,7 +24782,7 @@ case 'gbig':zoom=1.6;break;
 				},
 				$coin:function(){
 					game.broadcast(function(player){
-						if(!lib.config.nosparkles){
+						if(!lib.config.low_performance){
 							player.$coin();
 						}
 					},this);
@@ -24889,7 +24798,7 @@ case 'gbig':zoom=1.6;break;
 				},
 				$dust:function(){
 					game.broadcast(function(player){
-						if(!lib.config.nosparkles){
+						if(!lib.config.low_performance){
 							player.$dust();
 						}
 					},this);
@@ -29344,9 +29253,9 @@ case 'gbig':zoom=1.6;break;
 		},
 		suit:['club','spade','diamond','heart'],
 		group:['wei','shu','wu','qun','jin','shen','sven'],
-		nature:['fire','thunder','ice','stab','poison','seven'],
-	//	nature:['ocean','wind','thund','light','earth','blaze','eden'],
-		linked:['fire','thunder','ice'],
+		//nature:['fire','thunder','kani','ice','stab','poison','seven'],
+		nature:['ocean','wind','thund','light','earth','blaze','eden'],
+		linked:['fire','thunder','kami','ice'],
 		groupnature:{
 			shen:'thunder',
 			wei:'water',
@@ -33236,10 +33145,10 @@ case 'gbig':zoom=1.6;break;
 				dialog.forcebutton=true;
 				var result2=arguments[1];
 				if(result2==true){
-					dialog.content.firstChild.innerHTML='Members Performance!';
+					dialog.content.firstChild.innerHTML='团员数据';
 				}
 				else if(result2==false){
-					dialog.content.firstChild.innerHTML='Lets Try Again!';
+					dialog.content.firstChild.innerHTML='无解';
 				}
 				ui.update();
 				dialog.add(ui.create.div('.placeholder'));
@@ -33337,7 +33246,7 @@ case 'gbig':zoom=1.6;break;
 	
 		//if(result===true&&!lib.config.auto_popped_history) result='<span style="font-size:80px;font-variant:small-caps;text-shadow:0px 0px 17px #40E0D0, 0px 0px 17px #40E0D0;"> You Got A Win! </span></br> <span style="font-size:20px;font-variant:small-caps"> Your Name </span></br><span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;"> '+ lib.config.connect_nickname + '</span></br> <span style="font-size:20px;font-variant:small-caps">Your Country </span> </br> <span style="font-size:50px"> <img src="image/country/'+lib.config.connect_country+'.jpg" width="80" height="60" alt="Country"></img> </span></br><span style="font-size:20px;font-variant:small-caps"> Your Record</span></br><span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;">Round '+ game.roundNumber +' WIN! '+ ui.time3.innerHTML+'</span>';
 		
-		if(result===true&&!lib.config.auto_popped_history) result='<span style="font-size:80px;font-variant:small-caps;text-shadow:0px 0px 17px #40E0D0, 0px 0px 17px #40E0D0;"> You Got A Win! </span></br>	<span style="font-size:25px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;">{ Words from Ri: ' + lib.config.expe +' }</span></br> <span style="font-size:20px;font-variant:small-caps"> Your Name </span></br><span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;"> '+ lib.config.connect_nickname +  '</span></br> <span style="font-size:20px;font-variant:small-caps">Your Country </span> </br> <span style="font-size:50px"> <img src="image/country/'+lib.config.connect_country+'.jpg" width="80" height="60" alt="Country"></img> </span></br><span style="font-size:20px;font-variant:small-caps"> Your Record</span></br><span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;">Round '+ game.roundNumber +' WIN!  '+ ui.time3.innerHTML+'</span>';
+		if(result===true&&!lib.config.auto_popped_history) result='<span style="font-size:80px;font-variant:small-caps;text-shadow:0px 0px 17px #40E0D0, 0px 0px 17px #40E0D0;"> 승리! </span></br> <span style="font-size:20px;font-variant:small-caps"> Your Name </span></br><span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;"> '+ lib.config.connect_nickname + '</span></br> <span style="font-size:20px;font-variant:small-caps">Your Country </span> </br> <span style="font-size:50px"> <img src="image/country/'+lib.config.connect_country+'.jpg" width="80" height="60" alt="Country"></img> </span></br><span style="font-size:20px;font-variant:small-caps"> Your Record</span></br><span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;">라운드 '+ game.roundNumber +' WIN!  '+ ui.time3.innerHTML+'</span>';
 
 			//if(result===true) result='<span style="font-size:80px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;"> You Got A Win! </span></br> <span style="font-size:20px;font-variant:small-caps"> Your Name </span> </br>  <span style="font-size:50px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;"> '+ lib.config.connect_nickname + '</span></br> <span style="font-size:20px;font-variant:small-caps"> Country </span> </br> <span style="font-size:50px"> Brasil </span></br><span style="font-size:20px;font-variant:small-caps"> Your Record</span></br><span style="font-size:80px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;">'+ ui.time3.innerHTML+'</span>';
 		
@@ -33345,7 +33254,7 @@ case 'gbig':zoom=1.6;break;
 			//if(result===true) result='<span style="font-size:40px;font-variant:small-caps;text-shadow:0px 0px 7px #fff, 0px 0px 7px #ccc;"> HDnG Performance with PRYSMA:'+ lib.config.connect_nickname+ '! RECORD: '+ ui.time3.innerHTML + '</span>';
 			
 			
-			if(result===false) result='Lets Try Again..';
+			if(result===false) result='无解';
 			if(result==undefined) result='战斗结束';
 			dialog=ui.create.dialog(result);
 			dialog.noforcebutton=true;
@@ -33484,19 +33393,19 @@ case 'gbig':zoom=1.6;break;
 					tr=document.createElement('tr');
 					tr.appendChild(document.createElement('td'));
 					td=document.createElement('td');
-					td.innerHTML='Wins';
+					td.innerHTML='动摇';
 					tr.appendChild(td);
 					td=document.createElement('td');
-					td.innerHTML='Hurt';
+					td.innerHTML='被动';
 					tr.appendChild(td);
 					td=document.createElement('td');
-					td.innerHTML='Songs';
+					td.innerHTML='古谣';
 					tr.appendChild(td);
 					td=document.createElement('td');
-					td.innerHTML='Played';
+					td.innerHTML='记忆';
 					tr.appendChild(td);
 					td=document.createElement('td');
-					td.innerHTML='Overcome';
+					td.innerHTML='胜过';
 					tr.appendChild(td);
 					table.appendChild(tr);
 					for(i=0;i<game.players.length;i++){
@@ -33804,7 +33713,7 @@ case 'gbig':zoom=1.6;break;
 			}
 			if(!_status.brawl){
 				if(lib.config.mode=='boss'){
-					ui.create.control('Play Again!',function(){
+					ui.create.control('重来!',function(){
 						var pointer=game.boss;
 						var map={boss:game.me==game.boss,links:[]};
 						for(var iwhile=0;iwhile<10;iwhile++){
@@ -35522,8 +35431,7 @@ case 'gbig':zoom=1.6;break;
 		},
 		updateRoundNumber:function(){
 			game.broadcastAll(function(num1,num2,top){
-				if(ui.cardPileNumber) ui.cardPileNumber.innerHTML=' Round '+num1+ ' · LoreSongs in Memory '+num2;
-				//if(ui.cardPileNumber) ui.cardPileNumber.innerHTML=' ';
+					if(ui.cardPileNumber) ui.cardPileNumber.innerHTML=' ';
 				
 				_status.pileTop=top;
 			},game.roundNumber,ui.cardPile.childNodes.length,ui.cardPile.firstChild);
@@ -37687,7 +37595,7 @@ case 'gbig':zoom=1.6;break;
 						}
 					}
 					//menux=createMenu(['PLAY','SET','武将','卡牌','扩展','VIDEO'],{
-					menux=createMenu(['PLAY','Script',' ',' ',' ','VIDEO'],{
+					menux=createMenu(['开玩','设定',' ',' ',' ','录像'],{
 						position:menuContainer,bar:40
 					});
 				}
@@ -38179,8 +38087,7 @@ case 'gbig':zoom=1.6;break;
 							if(mode=='skill'){
 								var autoskillexpanded=false;
 								var banskillexpanded=false;
-								//ui.create.div('.config.more','自动发动 <div>&gt;</div>',page,function(){
-									ui.create.div('.config.more',' ',page,function(){
+								ui.create.div('.config.more','自动发动 <div>&gt;</div>',page,function(){
 									if(autoskillexpanded){
 										this.classList.remove('on');
 										for(var k=0;k<autoskillNodes.length;k++){
@@ -38432,7 +38339,7 @@ case 'gbig':zoom=1.6;break;
 													alert('导入失败');
 													return;
 												}
-												alert('Success, please wait.');
+												alert('导入成功');
 												if(!lib.db){
 													var noname_inited=localStorage.getItem('noname_inited');
 													var onlineKey=localStorage.getItem(lib.configprefix+'key');
@@ -38645,7 +38552,7 @@ case 'gbig':zoom=1.6;break;
 												str+='，导入时间可能较长';
 											}
 											var assetLoaded=function(){
-												promptnode.firstChild.innerHTML='Success! Please wait..。<span class="hrefnode">重新启动</span><span class="closenode">×</span>';
+												promptnode.firstChild.innerHTML='导入成功。<span class="hrefnode">重新启动</span><span class="closenode">×</span>';
 												promptnode.firstChild.querySelectorAll('span')[0].onclick=game.reload;
 												promptnode.firstChild.querySelectorAll('span')[1].onclick=function(){
 													promptnode.style.display='none';
@@ -42444,11 +42351,11 @@ case 'gbig':zoom=1.6;break;
 								fileReader.onload = function(fileLoadedEvent)
 								{
 									var finishLoad=function(){
-										extensionnode.innerHTML='Success! Please wait..，3秒后将重启';
+										extensionnode.innerHTML='导入成功，3秒后将重启';
 										setTimeout(function(){
-											extensionnode.innerHTML='Success! Please wait..，2秒后将重启';
+											extensionnode.innerHTML='导入成功，2秒后将重启';
 											setTimeout(function(){
-												extensionnode.innerHTML='Success! Please wait..，1秒后将重启';
+												extensionnode.innerHTML='导入成功，1秒后将重启';
 												setTimeout(game.reload,1000);
 											},1000);
 										},1000);
@@ -43221,8 +43128,8 @@ case 'gbig':zoom=1.6;break;
 							updatepx.style.display='none';
 							updatepx.style.whiteSpace='nowrap';
 							updatepx.style.marginTop='8px';
-							var buttonx=ui.create.node('button','Historical Lore Page',function(){
-								window.open('https://hidngem.miraheze.org/wiki/Main_Page');
+							var buttonx=ui.create.node('button','访问项目主页',function(){
+								window.open('https://github.com/adeFuLoDgu/noname');
 							});
 							updatepx.appendChild(buttonx);
 							ui.updateUpdate=function(){
@@ -44074,7 +43981,7 @@ case 'gbig':zoom=1.6;break;
 									var current=this.parentNode.querySelector('.videonode.active');
 									if(current){
 										game.export(lib.init.encode(JSON.stringify(current.link)),
-										'HDnG LoreSong - MV Record - '+current.link.name[0]+' - '+current.link.name[1]);
+										'谙灵光 - '+current.link.name[0]+' - '+current.link.name[1]);
 									}
 								});
 
@@ -44117,7 +44024,7 @@ case 'gbig':zoom=1.6;break;
 								saveButton.style.display='none';
 								deleteButton.style.display='none';
 
-								this.innerHTML='Home';
+								this.innerHTML='主頁';
 								for(var i=0;i<start.firstChild.childElementCount;i++){
 									var nodex=start.firstChild.childNodes[i];
 									if(nodex==node) continue;
@@ -45738,7 +45645,7 @@ case 'gbig':zoom=1.6;break;
 					});
 				}
 				ui.auto.id='autobutton';
-				ui.autonode=ui.create.div('#autonode','<div><span style="font-variant:small-caps;font-family:playfair display;">MV Mode</span></div>',ui.arena);
+				ui.autonode=ui.create.div('#autonode','<div><span style="font-variant:small-caps;font-family:playfair display;">뮤직x비디오x게임</span></div>',ui.arena);
 				ui.autonode.listen(ui.click.auto);
 				if(lib.config.mode=='connect'){
 					ui.auto.hide();
@@ -47174,7 +47081,7 @@ case 'gbig':zoom=1.6;break;
 							fakeavatar.delete();
 						},100);
 					}
-					if(bool&&lib.config.animation&&!lib.config.nosparkles){
+					if(bool&&lib.config.animation&&!lib.config.low_performance){
 						player.$rare();
 					}
 					if(callback){
@@ -47860,7 +47767,7 @@ case 'gbig':zoom=1.6;break;
 					}
 					vol1.appendChild(span);
 				}
-				uiintro.add('Story');
+				uiintro.add('Effects Volume');
 
 				var vol2=ui.create.div('.volumn');
 				uiintro.add(vol2);
@@ -49778,9 +49685,7 @@ case 'gbig':zoom=1.6;break;
 				else if(lib.config.debug&&lib.skin[nameskin]){
 					changeskin();
 				}
-				//var ban=ui.create.div('.menubutton.large.ban.character',uiintro,'禁用',function(e){
-
-					var ban=ui.create.div('.menubutton.large.ban.character',uiintro,' ',function(e){	
+				var ban=ui.create.div('.menubutton.large.ban.character',uiintro,'禁用',function(e){
 					if(this.classList.contains('unselectable')) return;
 					if(typeof noedit=='string'){
 						this.classList.toggle('active');
@@ -51507,7 +51412,7 @@ case 'gbig':zoom=1.6;break;
 				return 'Towards '+str+' , activate【'+get.skillTranslation(skill,player)+'】？';
 			}
 			else{
-				return 'Activate Power of【'+get.skillTranslation(skill,player)+'】？';
+				return '启动【'+get.skillTranslation(skill,player)+'】？';
 			}
 		},
 		prompt2:function(skill,target,player){
@@ -53563,7 +53468,7 @@ case 'gbig':zoom=1.6;break;
 				if(!node.noclick&&(node.isUnderControl()||(!game.observe&&game.me&&game.me.hasSkillTag('viewHandcard',null,node,true)))){
 					var hs=node.getCards('h');
 					if(hs.length){
-						uiintro.add('<div class="text center">LoreSong Saved</div>');
+						uiintro.add('<div class="text center">记忆中的古谣</div>');
 						uiintro.addSmall(node.getCards('h'));
 					}
 				}
@@ -53609,9 +53514,7 @@ case 'gbig':zoom=1.6;break;
 						}
 						else if(lib.skill[skills[i]].temp||!node.skills.contains(skills[i])||lib.skill[skills[i]].thundertext){
 							if(lib.skill[skills[i]].frequent||lib.skill[skills[i]].subfrequent){
-								//uiintro.add('<div><div class="skill thundertext thunderauto">【'+translation+'】</div><div class="thundertext thunderauto">'+get.skillInfoTranslation(skills[i],node)+'<br><div class="underlinenode on gray" style="position:relative;padding-left:0;padding-top:7px">自动发动</div></div></div>');
-								uiintro.add('<div><div class="skill thundertext thunderauto">【'+translation+'】</div><div class="thundertext thunderauto">'+get.skillInfoTranslation(skills[i],node)+'<br><div class="underlinenode on gray" style="position:relative;padding-left:0;padding-top:7px"> </div></div></div>');
-							
+								uiintro.add('<div><div class="skill thundertext thunderauto">【'+translation+'】</div><div class="thundertext thunderauto">'+get.skillInfoTranslation(skills[i],node)+'<br><div class="underlinenode on gray" style="position:relative;padding-left:0;padding-top:7px">自动发动</div></div></div>');
 								var underlinenode=uiintro.content.lastChild.querySelector('.underlinenode');
 								if(lib.skill[skills[i]].frequent){
 									if(lib.config.autoskilllist.contains(skills[i])){
@@ -53636,8 +53539,7 @@ case 'gbig':zoom=1.6;break;
 							}
 						}
 						else if(lib.skill[skills[i]].frequent||lib.skill[skills[i]].subfrequent){
-							//uiintro.add('<div><div class="skill">【'+translation+'】</div><div>'+get.skillInfoTranslation(skills[i],node)+'<br><div class="underlinenode on gray" style="position:relative;padding-left:0;padding-top:7px">自动发动</div></div></div>');
-							uiintro.add('<div><div class="skill">【'+translation+'】</div><div>'+get.skillInfoTranslation(skills[i],node)+'<br><div class="underlinenode on gray" style="position:relative;padding-left:0;padding-top:7px"> </div></div></div>');
+							uiintro.add('<div><div class="skill">【'+translation+'】</div><div>'+get.skillInfoTranslation(skills[i],node)+'<br><div class="underlinenode on gray" style="position:relative;padding-left:0;padding-top:7px">自动发动</div></div></div>');
 							var underlinenode=uiintro.content.lastChild.querySelector('.underlinenode');
 							if(lib.skill[skills[i]].frequent){
 								if(lib.config.autoskilllist.contains(skills[i])){
@@ -54639,17 +54541,10 @@ case 'gbig':zoom=1.6;break;
 				}
 			}
 			if(hp){
-			//switch(target.hp){
-			//		case 0:threaten*=1.5;break;
-			//		case 1:threaten*=1.2;break;
-
-						if(target.hp<=50000){threaten*=3.6;}
-						if(target.hp>=50000&&target.hp<100000){threaten*=2.5;}
-						if(target.hp>=100000&&target.hp<300000){threaten*=2;}
-						if(target.hp>=300000&&target.hp<700000){threaten*=1.5;}
-						if(target.hp>=700000&&target.hp<1000000){threaten*=1.35;}
-						if(target.hp>=1000000&&target.hp<1472137){threaten*=1.2;}
-
+				switch(target.hp){
+					case 0:threaten*=1.5;break;
+					case 1:threaten*=1.2;break;
+				}
 				switch(target.countCards('h')){
 					case 0:threaten*=1.5;break;
 					case 1:threaten*=1.2;break;
