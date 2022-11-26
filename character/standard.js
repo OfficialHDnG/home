@@ -233,7 +233,7 @@ game.import('character',function(lib,game,ui,get,ai,_status){
 						if(target.hasSkill('enemy')){
 						
 												
-							game.broadcastAll('createDialog',event.videoId, '信子:"회개하라"');
+							game.broadcastAll('createDialog',event.videoId, '信控:"회개하라"');
 							game.delay(1);
 							target.damage(611);
 												
@@ -243,7 +243,7 @@ game.import('character',function(lib,game,ui,get,ai,_status){
 					
 									
 										
-										game.broadcastAll('createDialog',event.videoId, '信子: "내가 가서 고쳐 주리라"');
+										game.broadcastAll('createDialog',event.videoId, '信控: "내가 가서 고쳐 주리라"');
 										game.delay(1);
 										target.recover(77777);		
 							
@@ -1005,7 +1005,7 @@ bak:{
 				trigger:{player:'phaseZhunbeiBegin'},
 				content:function(){
 				'step 0'
-				 game.broadcastAll('createDialog',event.videoId,'信子, 나를 따라오너라!');
+				 game.broadcastAll('createDialog',event.videoId,'信控, 나를 따라오너라!');
 				 game.delay(1);
 			},},
 
@@ -1835,7 +1835,7 @@ player.skip('phaseUse');
 					return _status.currentPhase==player&&player.countUsed()>=2&&player.countCards('h')>0;
 				},
 				content:function(){
-					player.$fullscreenpop('信子 连招!','metal');	
+					player.$fullscreenpop('信控 连招!','metal');	
 					game.delay(2);			
 				},				},	
 
@@ -3294,7 +3294,7 @@ player.update;
 				content:function(){
 					'step 0'
 				
-					player.$fullscreenpop('信子 一绝!','metal');
+					player.$fullscreenpop('信控 一绝!','metal');
 
 				//	game.broadcastAll('createDialog',event.videoId,'<span style="text-shadow:0px 0px 7px #ffffff , 0px 0px 7px #ffffff;font-size:25px;">AIRSON</span>');  
 				//	game.delay(2);
@@ -5259,7 +5259,7 @@ aspirit:{
 				var target=targets.randomGet();
 				game.delay(2);		
 				player.line(target,'fire');
-				player.$fullscreenpop('信子之魄!','metal');
+				player.$fullscreenpop('信控之魄!','metal');
 				target.damage(77+1075*xx);						
 			}
 		}
@@ -17553,12 +17553,12 @@ pmen:'<span style="text-shadow:0px 0px 7px #fff000, 0px 0px 7px #fff000;font-var
 			luomu:'大野',
 
 		
-		////	actr:'【Celebrate!】',
+
 		actr:'{Celebrate!}',
 			actw:'{Celebrate!}',
-		//	rba:'【Roars the Knight】',
+	
 	rba:'{政落彻 · 出证}',
-			aba:'{信子 · 护疗}',
+			aba:'{信控 · 护疗}',
 			gb:'{金花流年 · 童心}',
 			gbfuture:'{大绝!}',
 		chaoli:'{保守}',
@@ -17577,7 +17577,7 @@ bak:'回',
 	nuhour:'政落彻 · 魄!',
 	nuhour_info:'选择一首古谣',
 	
-	nuhoua:'信子 · 魄!',
+	nuhoua:'信控 · 魄!',
 	nuhoua_info:'选择一首古谣',
 	
 	nuhoug:'金花流年 · 魄!',
