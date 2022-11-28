@@ -7,36 +7,18 @@ game.import('play',function(lib,game,ui,get,ai,_status){
 				_status.coin=0;
 			}
 		},
-		arenaReady:function(game,gameconfig){
+		arenaReady:function(){
 			if(_status.video||_status.connectMode) return;
 			if(lib.config.mode!='chess'||get.config('chess_mode')!='leader'){
 				var str;
-			//	if(lib.config.coin_display_playpackconfig=='text'){
-
-				//ORIGINAL	if(lib.config.expe>=1){
-
-						if(lib.config.expe>=1){	
-				var r=7+(Math.floor(Math. sqrt(lib.config.lvr/777)));
-				var a=7+(Math.floor(Math. sqrt(lib.config.lva/777)));
-				var g=7+(Math.floor(Math. sqrt(lib.config.lvg/777)));
-				var x=7+(Math.floor(Math. sqrt(lib.config.lvx/777)));
-//str='<span>'+lib.config.expe+' Roars Lv.'+r+' · Airson Lv. '+ a +' · GoldenAge Lv. '+g+' · X Lv.' +x+' </span>'
-str='<span>Roars Lv.'+r+' · Airson Lv. '+ a +' · GoldenAge Lv. '+g+' · X Lv.' +x+' 번째 증언</span>'
-
-//if(lib.config.lvx>= &&lib.config.lvx<=){}
-//else {str='<span>Roars Lv.'+r+' · Airson Lv. '+ a +' · GoldenAge Lv. '+g+' · X Lv.' +x+' 번째 증언</span>'
-//}
-
-
-//str='<span>'+ lib.config.xtsu +' Roars Lv.'+r+' · Airson Lv. '+ a +' · GoldenAge Lv. '+g+' · X Lv.' +x+' </span>'
-	//str='<span>'+ lib.config.xtsu +' TSUNAMI '+ lib.config.rvol +' VOLCANO '+ lib.config.aede +' EDEN '+ lib.config.gjud +' JUDGMENT </span>'
-						
-					//str='<span>'+lib.config.expe+'</span><span> Words fioasdjfas;lfihas;jhasg;kjashgkas;jghsjk;aghsd</span>'
-					}
+				if(lib.config.coin_display_playpackconfig=='text'){
+					//str='<span>'+lib.config.coin+'</span><span>金</span>'
+					str=' '
+				}
 				else{
-					str='<span></span>'
-					//str='<span style="position:absolute">㉤</span><span style="margin-left:18px;font-family:xinwei;line-height:10px">'+lib.config.expe+'</span>';
-			
+					//str='<span style="position:absolute">㉤</span><span style="margin-left:18px;font-family:xinwei;line-height:10px">'+lib.config.coin+'</span>';
+					str=' '
+				
 				}
 				if(lib.config.coin_canvas_playpackconfig){
 					ui.window.classList.add('canvas_top');
@@ -95,7 +77,7 @@ str='<span>Roars Lv.'+r+' · Airson Lv. '+ a +' · GoldenAge Lv. '+g+' · X Lv.'
 								}
 							}
 							else{
-								buy.innerHTML='Start';
+							// TEST	buy.innerHTML='Start';
 							}
 						}
 						buy.name=i;
