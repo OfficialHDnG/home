@@ -47,6 +47,56 @@
 		canvasUpdates:[],
 		video:[],
 		skilllist:[],
+
+
+		lvr:[],
+		lva:[],
+		lvg:[],
+		lvx:[],
+		coin:[],
+		expe:[],
+		lvro:[],
+		lvrw:[],
+		lvrt:[],
+		lvrl:[],
+		lvrs:[],
+		lvrb:[],
+		lvre:[],
+	 
+		lvao:[],
+		lvaw:[],
+		lvat:[],
+		lval:[],
+		lvas:[],
+		lvab:[],
+		lvae:[],
+	 
+		lvgo:[],
+		lvgw:[],
+		lvgt:[],
+		lvgl:[],
+		lvgs:[],
+		lvgb:[],
+		lvge:[],
+		   
+	   
+		lvxo:[],
+		lvxw:[],
+		lvxt:[],
+		lvxl:[],
+		lvxs:[],
+		lvxb:[],
+		lvxe:[],
+	
+	
+	
+
+
+		//TEST
+		xtsu:[],
+	aede:[],
+	rvol:[],
+	gjud:[],
 		connectBanned:[],
 		characterIntro:{},
 		characterTitle:{},
