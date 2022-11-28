@@ -10212,7 +10212,7 @@ game.import('character',function(lib,game,ui,get,ai,_status){
 				},
 			},
 			//管辂和葛玄
-			ORIGgxlianhua:{
+			gxlianhua:{
 				derivation:['reyingzi','reguanxing','zhiyan','gongxin'],
 				audio:2,
 				init:function(player,skill){
