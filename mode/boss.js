@@ -1286,7 +1286,7 @@ game.import('mode',function(lib,game,ui,get,ai,_status){
 						list.push(i);
 					}
 		
-						var dialog=ui.create.dialog('<span style="font-size:14px">힏엔젬</br> 谙灵光 之</span></br><span style="font-size:37px">{ 生 往 永 恒 }</span></br><a href="https://officialhdng.github.io"谙灵光</br> 国际版 · </a><span style="text-shadow:0px 0px 3px orange;text-decoration:none;font-color:white"><a href="1.html#ea" target="blank">传说</a> · <a href="media.html#LIGHT" target="blank">报导</a></span></br></br>가서 너희를 위하여 처소를 예비하면 내가 다시 와서 너희를 내게로 영접하여 나 있는 곳에 너희도 있게하리라</span>');
+						var dialog=ui.create.dialog('<span style="font-size:14px">힏엔젬</br> 谙灵光 之</span></br><span style="font-size:37px">{ 生 往 永 恒 }</span></br><a href="https://officialhdng.github.io"谙灵光</br> 国际版 · </a><span style="text-shadow:0px 0px 3px orange;text-decoration:none;font-color:white"><a href="1.html#ea" target="blank">传说</a> · <a href="media.html#LIGHT" target="blank">报导</a></span></br></br>"가서 너희를 위하여 처소를 예비하면 내가 다시 와서 너희를 내게로 영접하여 나 있는 곳에 너희도 있게하리라"</span>');
 					
 					
 					
