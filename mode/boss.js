@@ -954,7 +954,7 @@ game.import('mode',function(lib,game,ui,get,ai,_status){
 				pea1:['male','qun','1/1',['peacettt','taut','pstart','sl'],['qun','hiddenboss','bossallowed'],'qun'],
 				pea2:['male','qun','1/1',['peacettt','taut','pstart','sl'],['qun','hiddenboss','bossallowed'],'qun'],
 			//boss_taotie:['male','qun',0,['taotdia','pstart','scant','taoav','peacettt','taut','pstart','sl'],['qun','boss','bossallowed'],'qun'],
-				boss_hundun:['male','aw','2525252/5434343',['glyptic_han','xremind','pstart','noshanb','killdraw','drawa','scant','bsha','sl','ehand','turnb','enemy','hund','xrearth2','xshejie2','airson','glyptic','win','znsbugua','activatex','boss_xiangde'],['zqun','boss','bossallowed'],'zqun'],
+				boss_hundun:['male','aw','8968970475/8968970475',['glyptic_han','xremind','pstart','noshanb','killdraw','drawa','scant','bsha','sl','ehand','turnb','enemy','hund','xrearth2','xshejie2','airson','glyptic','win','znsbugua','activatex','boss_xiangde'],['zqun','boss','bossallowed'],'zqun'],
 				
 			
 			
